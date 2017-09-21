@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Twitter</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        li.pad {
+            padding-bottom: 2%;
+            padding-top: 2%;
+        }
+        
+        .row {
+            padding-right: 12%;
+        }
+        
+        .d {
+            padding-left: 25%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">&nbsp;&nbsp;Tweeten</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-bell"></span>Notifications</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>Messages</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="pad"> <input type="text" class="form-control" placeholder="Search"></li>
+                    <li class="pad">&nbsp;&nbsp; <button type="submit" class="btn btn-default" class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-search"></span></button>&nbsp;&nbsp;</li>
+
+                    <li class="pad"><img id="forest" src="Images\forest.jpg" alt="forest" class="img-circle" width="35" height="35">&nbsp; </li>
+                    <li class="pad"> <button type="" class="btn btn-primary">Tweet</button>&nbsp;&nbsp;</li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" align="center">
+                <div class="d">
+                    <img id="forest" src="Images\forest.jpg" alt="forest" class="img-circle" width="140" height="140">
+                    <h4> Kevin Lantz</h4>
+                    <h6> @Klantz</h6>
+                    <h5> Student at OTC.</h5>
+                    <p>
+                        </br>
+                    </p>
+                    <h6><span class="glyphicon glyphicon-map-marker"></span> Springfield,MO</h6>
+                    <h6><span class="glyphicon glyphicon-calendar"></span> Joined September 2017</h6>
+                    <h6><span class="glyphicon glyphicon-picture"></span> 12 Photos and Videos</h6>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading" align="center">
+                        <p><strong>Compose New Tweet</strong></p>
+                    </div>
+                    <div class="panel-body">
+                        <textarea class="form-control" rows="3"></textarea>
+                        <p>
+                            </br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading" align="left">
+                        <p><strong>Tweets - Tweets & Replies - Media</strong></p>
+                    </div>
+
+
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="Images/bike.jpg" width="80" height="80" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading" align="left"> @awesome</h4>
+                                        <p align="left"> Click Me</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="col-md-4" align="center">
+                <div class="panel panel-default">
+                    <div class="panel-heading" align="left">
+                        <p><strong>Your Tweet Activity</strong></p>
+                    </div>
+                    <div class="panel-body">
+                        <p>You have tweeted once. Good job!</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading" align="left">
+                        <p><strong>Who to Follow</strong></p>
+                    </div>
+
+
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="Images/bike.jpg" width="80" height="80" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading" align="left"> @awesome</h4>
+                                        <p align="left"> Click Me</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
