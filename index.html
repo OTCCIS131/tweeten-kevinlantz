@@ -49,17 +49,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-bell"></span>Notifications</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>Messages</a></li>
+                    <li id="home" class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home <span class="sr-only">(current)</span></a></li>
+                    <li id="Notify"><a href="#"><span class="glyphicon glyphicon-bell"></span>Notifications</a></li>
+                    <li id="message"><a href="#"><span class="glyphicon glyphicon-envelope"></span>Messages</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="pad"> <input type="text" class="form-control" placeholder="Search"></li>
+                    <li id="search" class="pad"> <input type="text" class="form-control" placeholder="Search"></li>
                     <li class="pad">&nbsp;&nbsp; <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>&nbsp;&nbsp;</li>
 
-                    <li class="pad"><img id="forest" src="Images\forest.jpg" alt="forest" class="img-circle" width="35" height="35">&nbsp; </li>
-                    <li class="pad"> <button type="" class="btn btn-primary">Tweet</button>&nbsp;&nbsp;</li>
+                    <li id="navpic" class="pad"><img id="forest" src="Images\forest.jpg" alt="forest" class="img-circle" width="35" height="35">&nbsp; </li>
+                    <li id="tweet" class="pad"> <button type="" class="btn btn-primary">Tweet</button>&nbsp;&nbsp;</li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -83,7 +83,7 @@
                     <!-- <a href='./settings'>facebbo<span class='glyphicon glyphicon-cog'></span></a> -->
                     <h6><span class="glyphicon glyphicon-link"><a href="facebook.com">Facebook.com</a></span> </h6>
                     <h6><span class="glyphicon glyphicon-calendar"></span> Joined September 2017</h6>
-                    <h6><span class="glyphicon glyphicon-picture"></span> 12 Photos and Videos</h6>
+                    <h6 id="photos"><span class="glyphicon glyphicon-picture"></span> 12 Photos and Videos</h6>
 
 
                 </div>
@@ -96,14 +96,14 @@
                         <p><strong>Compose New Tweet</strong></p>
                     </div>
                     <div class="panel-body">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="textarea" class="form-control" rows="3"></textarea>
                         <p>
                             </br>
                         </p>
-                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-picture"></span></button>
-                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-map-marker"></span></button>
-                        <a href="" class='pull-right control-group'> <button type="" class="btn btn-primary">Tweet</button></a>
-                        <span class='pull-right' align='center' class="label label-default">140&nbsp;</span>
+                        <button id="picgallery" type="button" class="btn btn-info"><span class="glyphicon glyphicon-picture"></span></button>
+                        <button id="location" type="button" class="btn btn-info"><span class="glyphicon glyphicon-map-marker"></span></button>
+                        <a href="" class='pull-right control-group'> <button id="sendtweet" type="" class="btn btn-primary">Tweet</button></a>
+                        <span id="textcounter" class='pull-right' align='center' class="label label-default">140&nbsp;</span>
 
 
                     </div>
@@ -117,21 +117,21 @@
 
 
                     <!-- List group -->
-                    <ul class="list-group">
+                    <ul id="tweet1" class="list-group">
                         <li class="list-group-item">
                             <ul class="media-list">
                                 <li class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="img-circle" src="Images/forest.jpg" width="80" height="80" alt="...">
+                                            <img id="pic1" class="img-circle" src="Images/forest.jpg" width="80" height="80" alt="...">
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 style="display:inline" class="media-heading" align="left"><strong> Kevin Lantz</strong>
+                                        <h4 id="name" style="display:inline" class="media-heading" align="left"><strong> Kevin Lantz</strong>
 
                                             <h6 style="display:inline">@Klantz - Sep20</h6>
                                         </h4>
-                                        <h6 align="left"> Wow a new twitter page. #Webdev2</h6>
+                                        <h6 id="texttweet" align="left"> Wow a new twitter page. #Webdev2</h6>
                                         <h6> <span class="glyphicon glyphicon-comment">32</span> <span class="glyphicon glyphicon-retweet">1.1K</span><span class="glyphicon glyphicon-heart">50</span></span><span class="glyphicon glyphicon-envelope"></span></h6>
                                     </div>
                                 </li>
@@ -149,12 +149,12 @@
             </div>
 
             <div class="col-md-4" align="center">
-                <div class="panel panel-default">
+                <div id="tweetactivity" class="panel panel-default">
                     <div class="panel-heading" align="left">
                         <p><strong>Your Tweet Activity</strong></p>
                     </div>
                     <div class="panel-body">
-                        <p>You have tweeted once. Good job!</p>
+                        <p id="actitiy">You have tweeted once. Good job!</p>
                     </div>
                 </div>
 
@@ -166,18 +166,18 @@
 
 
                     <!-- List group -->
-                    <ul class="list-group">
+                    <ul id="whotofollow1" class="list-group">
                         <li class="list-group-item">
                             <ul class="media-list">
                                 <li class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="img-circle" src="Images/otc.jpg" width="80" height="80" alt="...">
+                                            <img id="followimage1" class="img-circle" src="Images/otc.jpg" width="80" height="80" alt="...">
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading" align="left"> @OTCedu</h4>
-                                        <a href="" class='pull-left control-group'> <button type="" class="btn btn-info">Follow</button></a>
+                                        <h4 id="followtag@1" class="media-heading" align="left"> @OTCedu</h4>
+                                        <a href="" class='pull-left control-group'> <button id="followbutton1" type="" class="btn btn-info">Follow</button></a>
 
 
                                     </div>
@@ -185,40 +185,40 @@
                             </ul>
 
                         </li>
-                        <li class="list-group-item">
+                        <li id="whotofollow2" class="list-group-item">
                             <ul class="media-list">
                                 <li class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="img-circle" src="Images/msu.jpg" width="80" height="80" alt="...">
+                                            <img id="followimage2" class="img-circle" src="Images/msu.jpg" width="80" height="80" alt="...">
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading" align="left"> @MSUedu</h4>
-                                        <a href="" class='pull-left control-group'> <button type="" class="btn btn-info">Follow</button></a>
+                                        <h4 id="followtag@2" class="media-heading" align="left"> @MSUedu</h4>
+                                        <a href="" class='pull-left control-group'> <button type="" id="followbutton2" class="btn btn-info">Follow</button></a>
 
 
                                     </div>
                                 </li>
                             </ul>
                         </li>
-                        <li class="list-group-item">
+                        <liid="whotofollow3" class="list-group-item">
                             <ul class="media-list">
                                 <li class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="img-circle" src="Images/bike.jpg" width="80" height="80" alt="...">
+                                            <img id="followimage2" class="img-circle" src="Images/bike.jpg" width="80" height="80" alt="...">
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading" align="left"> @Bikeshop</h4>
-                                        <a href="" class='pull-left control-group'> <button type="" class="btn btn-info">Follow</button></a>
+                                        <h4 id="followtag@3" class="media-heading" align="left"> @Bikeshop</h4>
+                                        <a href="" class='pull-left control-group'> <button id="followbutton2" type="" class="btn btn-info">Follow</button></a>
 
 
                                     </div>
                                 </li>
                             </ul>
-                        </li>
+                            </li>
                     </ul>
                 </div>
             </div>
