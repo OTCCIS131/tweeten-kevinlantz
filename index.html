@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +27,16 @@
         .d {
             padding-left: 25%;
         }
+		.lineUp {
+			padding-left: 2px;
+			padding-right: 4px;
+		}
     </style>
-
 
 </head>
 
 <body>
+
 
     <nav class="navbar navbar-default">
         <div class="container">
@@ -132,7 +137,15 @@
                                             <h6 style="display:inline">@Klantz - Sep20</h6>
                                         </h4>
                                         <h6 id="texttweet" align="left"> Wow a new twitter page. #Webdev2</h6>
-                                        <h6> <span class="glyphicon glyphicon-comment">32</span> <span class="glyphicon glyphicon-retweet">1.1K</span><span class="glyphicon glyphicon-heart">50</span></span><span class="glyphicon glyphicon-envelope"></span></h6>
+                                         <span class="glyphicon glyphicon-comment lineUp"></span>32
+										<span> </span>
+										<span class="glyphicon glyphicon-retweet add1 lineUp"></span>10
+										<span> </span>
+
+										<span class="glyphicon glyphicon-heart add1 lineUp"></span>1
+										<span> </span>
+										
+										<span class="glyphicon glyphicon-envelope lineUp"></span>
                                     </div>
                                 </li>
                             </ul>
@@ -233,6 +246,22 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+
+			
+			<script>
+			
+			let count = Array.from(document.getElementsByClassName("add1"));
+			
+				count.forEach(btn => {
+				btn.addEventListener("click", fill => {
+                let current = btn.nextSibling.textContent.trim()
+                newCount = parseInt(current) + 1
+                btn.nextSibling.textContent = newCount;
+            })
+        })
+
+			</script>
+
 </body>
 
 </html>
