@@ -27,10 +27,11 @@
         .d {
             padding-left: 25%;
         }
-		.lineUp {
-			padding-left: 2px;
-			padding-right: 4px;
-		}
+        
+        .lineUp {
+            padding-left: 2px;
+            padding-right: 4px;
+        }
     </style>
 
 </head>
@@ -107,8 +108,10 @@
                         </p>
                         <button id="picgallery" type="button" class="btn btn-info"><span class="glyphicon glyphicon-picture"></span></button>
                         <button id="location" type="button" class="btn btn-info"><span class="glyphicon glyphicon-map-marker"></span></button>
-                        <a href="" class='pull-right control-group'> <button id="sendtweet" type="" class="btn btn-primary">Tweet</button></a>
-                        <span id="textcounter" class='pull-right' align='center' class="label label-default">140&nbsp;</span>
+                        <div class="pull-right">
+                            140&nbsp;
+                            <button class="btn btn-primary">Tweet</button>
+                        </div>
 
 
                     </div>
@@ -117,7 +120,7 @@
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
                     <div class="panel-heading" align="left">
-                        <p><strong>Tweets - Tweets & Replies - Media</strong></p>
+                        <p><strong>Tweets • Tweets & Replies • Media</strong></p>
                     </div>
 
 
@@ -134,18 +137,18 @@
                                     <div class="media-body">
                                         <h4 id="name" style="display:inline" class="media-heading" align="left"><strong> Kevin Lantz</strong>
 
-                                            <h6 style="display:inline">@Klantz - Sep20</h6>
+                                            <h6 style="display:inline">@Klantz •<span id="time"> </span></h6>
                                         </h4>
                                         <h6 id="texttweet" align="left"> Wow a new twitter page. #Webdev2</h6>
-                                         <span class="glyphicon glyphicon-comment lineUp"></span>32
-										<span> </span>
-										<span class="glyphicon glyphicon-retweet add1 lineUp"></span>10
-										<span> </span>
+                                        <span class="glyphicon glyphicon-comment lineUp"></span>32
+                                        <span> </span>
+                                        <span class="glyphicon glyphicon-retweet add1 lineUp"></span><span>10</span>
+                                        <span> </span>
 
-										<span class="glyphicon glyphicon-heart add1 lineUp"></span>1
-										<span> </span>
-										
-										<span class="glyphicon glyphicon-envelope lineUp"></span>
+                                        <span class="glyphicon glyphicon-heart add1 lineUp"></span><span>1</span>
+                                        <span> </span>
+
+                                        <span class="glyphicon glyphicon-envelope lineUp"></span>
                                     </div>
                                 </li>
                             </ul>
@@ -247,8 +250,27 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
 
-			
-			<script>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <script>
+            $(function() {
+
+                $(".add1").click(function(event) {
+
+                    let current = $(this).next().text()
+                    newCount = parseInt(current) + 1
+                    $(this).next().text(newCount)
+                });
+
+            })
+            n = new Date();
+            y = n.getFullYear();
+            m = n.getMonth() + 1;
+            d = n.getDate();
+            document.getElementById("time").innerHTML = m + "/" + d + "/" + y;
+        </script>
+
+        <!-- <script>
 			
 			let count = Array.from(document.getElementsByClassName("add1"));
 			
@@ -260,7 +282,7 @@
             })
         })
 
-			</script>
+			</script> -->
 
 </body>
 
