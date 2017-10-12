@@ -32,6 +32,11 @@
             padding-left: 2px;
             padding-right: 4px;
         }
+        
+        .one1 {
+            width: 17em;
+            word-wrap: break-word;
+        }
     </style>
 
 </head>
@@ -101,64 +106,76 @@
                     <div class="panel-heading" align="center">
                         <p><strong>Compose New Tweet</strong></p>
                     </div>
-                    <div class="panel-body">
-                        <textarea id="textarea" class="form-control" rows="3"></textarea>
-                        <p>
-                            </br>
-                        </p>
-                        <button id="picgallery" type="button" class="btn btn-info"><span class="glyphicon glyphicon-picture"></span></button>
-                        <button id="location" type="button" class="btn btn-info"><span class="glyphicon glyphicon-map-marker"></span></button>
-                        <div class="pull-right">
-                            140&nbsp;
-                            <button class="btn btn-primary">Tweet</button>
-                        </div>
 
+                    <div class="panel-body">
+                        <form id="old">
+                            <textarea maxlength="140" id="textarea" class="form-control text" rows="3"></textarea>
+
+                            <p>
+                                </br>
+                            </p>
+                            <button id="picgallery" type="button" class="btn btn-info"><span class="glyphicon glyphicon-picture"></span></button>
+                            <button id="location" type="button" class="btn btn-info"><span class="glyphicon glyphicon-map-marker"></span></button>
+                            <div class="pull-right">
+                                <span id="chars"> 140</span>
+                                <button type="submit" class="btn btn-primary press">Tweet</button>
+                            </div>
+                        </form>
 
                     </div>
+
                 </div>
 
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
-                    <div class="panel-heading" align="left">
+                    <div class="panel-heading clo" align="left">
                         <p><strong>Tweets • Tweets & Replies • Media</strong></p>
                     </div>
 
+                    <div class="log"></div>
+                    <form id="old">
+                        <!-- List group -->
 
-                    <!-- List group -->
-                    <ul id="tweet1" class="list-group">
-                        <li class="list-group-item">
-                            <ul class="media-list">
-                                <li class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img id="pic1" class="img-circle" src="Images/forest.jpg" width="80" height="80" alt="...">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 id="name" style="display:inline" class="media-heading" align="left"><strong> Kevin Lantz</strong>
+                        <ul id="tweet1" class="list-group clone1">
+                            <li class="list-group-item">
+                                <ul class="media-list">
+                                    <li class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img id="pic1" class="img-circle" src="Images/forest.jpg" width="80" height="80" alt="...">
+                                            </a>
+                                        </div>
 
-                                            <h6 style="display:inline">@Klantz •<span id="time">Sept 20 </span></h6>
-                                        </h4>
-                                        <h6 id="texttweet" align="left"> Wow a new twitter page. #Webdev2</h6>
-                                        <span class="glyphicon glyphicon-comment lineUp"></span>32
-                                        <span> </span>
-                                        <span class="glyphicon glyphicon-retweet add1 lineUp"></span><span>10</span>
-                                        <span> </span>
 
-                                        <span class="glyphicon glyphicon-heart add1 lineUp"></span><span>1</span>
-                                        <span> </span>
+                                        <div class="media-body ">
+                                            <h4 id="name" style="display:inline" class="media-heading" align="left"><strong> Kevin Lantz</strong>
 
-                                        <span class="glyphicon glyphicon-envelope lineUp"></span>
-                                    </div>
-                                </li>
-                            </ul>
+                                                <h6 style="display:inline">@Klantz •<span id="time">Sept 20 </span></h6>
+                                            </h4>
+                                            <div class="one1">
+                                                <h6 class="tweeting" align="left" id="activity"> Wow a new twitter page. #Webdev2
+                                                </h6>
+                                            </div>
 
-                        </li>
+                                            <span class="glyphicon glyphicon-comment lineUp"></span>0
+                                            <span> </span>
+                                            <span class="glyphicon glyphicon-retweet add1 lineUp"></span><span>0</span>
+                                            <span> </span>
 
-                    </ul>
+                                            <span class="glyphicon glyphicon-heart add1 lineUp"></span><span>0</span>
+                                            <span> </span>
+
+                                            <span class="glyphicon glyphicon-envelope lineUp"></span>
+
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                        </ul>
                 </div>
-
-
+                <!-- </form> -->
 
 
 
@@ -170,7 +187,7 @@
                         <p><strong>Your Tweet Activity</strong></p>
                     </div>
                     <div class="panel-body">
-                        <p id="actitiy">You have tweeted once. Good job!</p>
+                        <p class="latest">You have tweeted once. Good job!</p>
                     </div>
                 </div>
 
@@ -239,10 +256,6 @@
                 </div>
             </div>
 
-
-
-
-
         </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -263,21 +276,71 @@
                 });
 
             })
+
+
+
+            $(function() {
+
+
+                // clone copy 
+                let copy = $(".clone1").clone(true)
+                    // click button 
+                $("#old").submit(function(e) {
+                    e.preventDefault()
+                    if ($("#textarea").val() != "") {
+                        // inserts clone after orignal
+                        $(".log").after(copy.clone(true))
+
+
+
+
+
+                        // replaces text in clone with new tweet
+                        let text2 = $("#textarea").val()
+                        $('#activity').replaceWith(text2)
+
+
+                        // clears textarea
+                        $('.text').val('');
+
+                        // sets chars back to 140 after each click 
+                        var maxLength = 140
+                        var length = $(this).val().length
+                        var length = maxLength - length
+                        $('#chars').text(length)
+
+                        // focus on textarea after click 
+                        const focusing = document.getElementById("textarea")
+                        focusing.focus()
+                    } else {
+
+                    }
+                })
+
+
+            });
+            // char counter 
+            $(function() {
+                var maxLength = 140;
+                $('.text').keyup(function() {
+                    var length = $(this).val().length
+                    length = maxLength - length
+                    $('#chars').text(length)
+
+                });
+            })
+
+            // 	let count = Array.from(document.getElementsByClassName("add1"));
+
+            // 		count.forEach(btn => {
+            // 		btn.addEventListener("click", fill => {
+            //         let current = btn.nextSibling.textContent.trim()
+            //         newCount = parseInt(current) + 1
+            //         btn.nextSibling.textContent = newCount;
+            //     })
+            // })
         </script>
 
-        <!-- <script>
-			
-			let count = Array.from(document.getElementsByClassName("add1"));
-			
-				count.forEach(btn => {
-				btn.addEventListener("click", fill => {
-                let current = btn.nextSibling.textContent.trim()
-                newCount = parseInt(current) + 1
-                btn.nextSibling.textContent = newCount;
-            })
-        })
-
-			</script> -->
 
 </body>
 
